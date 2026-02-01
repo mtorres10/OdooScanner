@@ -1,23 +1,14 @@
-﻿namespace OdooScanner;
+﻿using OdooScanner.Services;
+
+namespace OdooScanner;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+	private readonly OdooApiService _odooApiService;
 
-	public MainPage()
+	public MainPage(OdooApiService odooApiService)
 	{
 		InitializeComponent();
-	}
-
-	private void OnCounterClicked(object? sender, EventArgs e)
-	{
-		count++;
-
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
-
-		SemanticScreenReader.Announce(CounterBtn.Text);
+		_odooApiService = odooApiService;
 	}
 }
