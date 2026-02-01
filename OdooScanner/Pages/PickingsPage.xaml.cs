@@ -31,12 +31,12 @@ namespace OdooScanner.Pages
 
                 if (pickings.Count == 0)
                 {
-                    await DisplayAlertAsync("Info", "No stock pickings found", "OK");
+                    await DisplayAlert("Info", "No stock pickings found", "OK");
                 }
             }
             catch (Exception ex)
             {
-                await DisplayAlertAsync("Error", $"Failed to load pickings: {ex.Message}", "OK");
+                await DisplayAlert("Error", $"Failed to load pickings: {ex.Message}", "OK");
             }
             finally
             {

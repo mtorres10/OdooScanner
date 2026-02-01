@@ -25,7 +25,7 @@ namespace OdooScanner.Pages
                 status = await Permissions.RequestAsync<Permissions.Camera>();
                 if (status != PermissionStatus.Granted)
                 {
-                    await DisplayAlertAsync("Permission Denied", 
+                    await DisplayAlert("Permission Denied", 
                         "Camera permission is required for barcode scanning", 
                         "OK");
                     await Shell.Current.GoToAsync("..");

@@ -24,7 +24,7 @@ namespace OdooScanner.Pages
                 string.IsNullOrWhiteSpace(UsernameEntry.Text) ||
                 string.IsNullOrWhiteSpace(PasswordEntry.Text))
             {
-                await DisplayAlertAsync("Error", "Please fill in all fields", "OK");
+                await DisplayAlert("Error", "Please fill in all fields", "OK");
                 return;
             }
 
