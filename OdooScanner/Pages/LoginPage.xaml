@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OdooScanner.Pages.LoginPage"
+             Title="Odoo Scanner Login">
+    
+    <ScrollView>
+        <VerticalStackLayout Padding="30" Spacing="20">
+            
+            <Label Text="Odoo Scanner" 
+                   FontSize="32" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Margin="0,20,0,40"/>
+
+            <Label Text="Server URL" FontSize="16"/>
+            <Entry x:Name="UrlEntry" 
+                   Placeholder="https://your-odoo-server.com"
+                   Keyboard="Url"/>
+
+            <Label Text="Database" FontSize="16"/>
+            <Entry x:Name="DatabaseEntry" 
+                   Placeholder="your_database"/>
+
+            <Label Text="Username" FontSize="16"/>
+            <Entry x:Name="UsernameEntry" 
+                   Placeholder="admin"/>
+
+            <Label Text="Password" FontSize="16"/>
+            <Entry x:Name="PasswordEntry" 
+                   Placeholder="password"
+                   IsPassword="True"/>
+
+            <ActivityIndicator x:Name="LoadingIndicator" 
+                             IsRunning="False" 
+                             IsVisible="False"
+                             Color="{StaticResource Primary}"/>
+
+            <Button x:Name="LoginButton"
+                    Text="Login"
+                    Clicked="OnLoginClicked"
+                    HorizontalOptions="Fill"
+                    Margin="0,20,0,0"/>
+
+            <Label x:Name="ErrorLabel"
+                   TextColor="Red"
+                   IsVisible="False"
+                   HorizontalOptions="Center"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

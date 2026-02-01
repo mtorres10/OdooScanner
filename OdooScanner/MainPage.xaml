@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OdooScanner.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="dotnet_bot.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Odoo Scanner Logo" />
+
+            <Label
+                Text="Welcome to Odoo Scanner!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Scan barcodes to manage inventory and stock operations"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="Use the tabs below to navigate between the scanner and stock pickings list."
+                FontSize="16"
+                HorizontalOptions="Center"
+                Margin="0,20,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

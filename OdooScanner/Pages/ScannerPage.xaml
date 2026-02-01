@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:zxing="clr-namespace:ZXing.Net.Maui.Controls;assembly=ZXing.Net.Maui.Controls"
+             x:Class="OdooScanner.Pages.ScannerPage"
+             Title="Barcode Scanner">
+    
+    <Grid RowDefinitions="*, Auto, Auto">
+        
+        <!-- Camera View -->
+        <zxing:CameraBarcodeReaderView 
+            x:Name="CameraView"
+            Grid.Row="0"
+            IsDetecting="True"
+            BarcodesDetected="OnBarcodesDetected"/>
+
+        <!-- Scan Result -->
+        <Frame Grid.Row="1" 
+               BackgroundColor="{StaticResource Primary}"
+               Padding="20"
+               Margin="20,10">
+            <VerticalStackLayout Spacing="10">
+                <Label Text="Last Scanned:"
+                       TextColor="White"
+                       FontSize="16"
+                       FontAttributes="Bold"/>
+                <Label x:Name="BarcodeLabel"
+                       Text="No barcode scanned yet"
+                       TextColor="White"
+                       FontSize="18"/>
+                <Label x:Name="ValidationLabel"
+                       TextColor="White"
+                       FontSize="14"
+                       IsVisible="False"/>
+            </VerticalStackLayout>
+        </Frame>
+
+        <!-- Actions -->
+        <HorizontalStackLayout Grid.Row="2" 
+                              Spacing="10" 
+                              Padding="20"
+                              HorizontalOptions="Center">
+            <Button Text="Toggle Light"
+                    Clicked="OnToggleLightClicked"
+                    WidthRequest="150"/>
+            <Button Text="View Pickings"
+                    Clicked="OnViewPickingsClicked"
+                    WidthRequest="150"/>
+        </HorizontalStackLayout>
+        
+    </Grid>
+    
+</ContentPage>
